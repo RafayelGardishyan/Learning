@@ -1,5 +1,7 @@
 import random
 import time
+import tk
+
 
 already = []
 
