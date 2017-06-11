@@ -1,7 +1,7 @@
 import random
 import time
 
-already = 0
+already = []
 
 listfile = input("What is the name of the list you want to learn? (without .txt): ")
 
@@ -15,17 +15,21 @@ with open(listfile + '.txt', 'r') as document:
         word += [line[0]]
         answer += [line[1]]
 
+print("Learn words by guessing \n\n")
+
 def go():
     global already
     question = random.randint(0, len(word))
-    print("Learn words by guessing \n\n")
-    if question == already:
-        go()
+    if question in already:
+        if len(word) == len(already):
+            print("You are ready")
+        else:
+            go()
     else:
-        already = question
         print("The word is: " + word[question - 1])
         inp = input("Your answer is: ")
         if inp == answer[question - 1]:
+            already.append(question)
             print("\n\nCongratulations")
         else:
             print("\nNo it is wrong. The good answer was " + answer[question - 1])
