@@ -14,10 +14,9 @@ To add a list crate a txt file in the main.py directory.
 
 Then add words to it as in the example below.
 
-    One 1
-    Two 2
-    Three 3
+    One 1
+    Two 2
+    Three 3
 
 Save the file.
     
-Now you can use it to practice.
